@@ -1,0 +1,23 @@
+schema:
+  - graph/**/*.graphql
+  - ent/**/*.graphql
+
+exec:
+  layout: follow-schema
+  dir: graph/generated
+  package: generated
+
+resolver:
+  layout: follow-schema
+  dir: adapter/resolver
+
+autobind:
+  - "github.com/Pranc1ngPegasus/ent-gqlgen-practice/ent"
+
+models:
+  ID:
+    model:
+      - github.com/99designs/gqlgen/graphql.ID
+  Node:
+    model:
+      - github.com/Pranc1ngPegasus/ent-gqlgen-practice/ent.Noder
