@@ -5,18 +5,17 @@ package resolver
 
 import (
 	"context"
-	"fmt"
 
 	"github.com/Pranc1ngPegasus/ent-gqlgen-practice/ent"
 	"github.com/Pranc1ngPegasus/ent-gqlgen-practice/graph/generated"
 )
 
 func (r *queryResolver) Node(ctx context.Context, id string) (ent.Noder, error) {
-	panic(fmt.Errorf("not implemented"))
+	return r.client.Noder(ctx, id)
 }
 
 func (r *queryResolver) Nodes(ctx context.Context, ids []string) ([]ent.Noder, error) {
-	panic(fmt.Errorf("not implemented"))
+	return r.client.Noders(ctx, ids)
 }
 
 // Query returns generated.QueryResolver implementation.
